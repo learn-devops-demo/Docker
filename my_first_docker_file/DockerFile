@@ -1,0 +1,14 @@
+FROM ubuntu:latest 
+
+#Set working directory in the image
+WORKDIR /app
+
+#Copy current directory files from host file system to image filesystem
+COPY . /app
+
+#Install python3 and pip packages
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+#Run command to start the application
+ENTRYPOINT ["python3"]
+CMD ["hello.py"]
