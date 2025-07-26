@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .poll-question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .poll-options input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Poll</h1>
+
+    <div class="poll-question">
+        <p>Which is your favorite programming language?</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="poll-options">
+            <label><input type="radio" name="language" value="Python"> Python</label><br>
+            <label><input type="radio" name="language" value="JavaScript"> JavaScript</label><br>
+            <label><input type="radio" name="language" value="Java"> Java</label><br>
+            <label><input type="radio" name="language" value="C++"> C++</label><br>
+        </div>
+
+        <br>
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>
