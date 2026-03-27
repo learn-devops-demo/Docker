@@ -1,0 +1,12 @@
+services:
+  mario:
+    container_name: "super-mario"
+    image: super-mario:v1
+    networks:
+      - mario-bridge
+    ports:
+      - "8081:8080"
+       
+networks:
+  mario-bridge:
+    driver: bridge
